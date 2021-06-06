@@ -11,7 +11,7 @@ $imgContenido = addslashes(file_get_contents($imagen));
 $insertar = "INSERT INTO productos(nombre, grupo, precio, imagen, codigo) VALUE('$nombre','$grupo','$precio','$imgContenido','$codigo')";
 $resultado = mysqli_query($conexion, $insertar);
 if($resultado) {
-    echo "<script> alert('Se ha insertado correctamente'); window.location='/paginaweb';</script>";
+    echo "<script> alert('Se ha insertado correctamente'); window.location='/familywebmarket/PaginaWeb';</script>";
 }else{
     echo "<script> alert('No se pudo registrar'); window.history.go=(-1);</script>";
 }

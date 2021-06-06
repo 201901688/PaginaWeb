@@ -19,59 +19,37 @@
 </head>
 
 <body>
-<?php 
-    require "NavBar.php";
-    include "grupo_articulo.php";
-  ?>
-
- 
-
- 
-   
-
-
-
-
-
-<div class="filterDiv all"> 
-    
-    <?php $resultado = mysqli_query($conexion, $productos); while($row = mysqli_fetch_assoc($resultado)) { ?>
-        
-        
+    <?php 
+        require "NavBar.php";
+        include "grupo_articulo.php";
+    ?> 
     <div class="contenedor_productos">
-        <div class="tarjeta_producto">
-            <form method="post" action="">
-                <div class="thumbnail">
-                    <img src="data: image/png;base64,<?php 
-                       
-                          echo base64_encode($row['imagen']); 
-                        
-                    
-                   ?>"/>
-                    <div class="caption">
-                        <h4 class="text-info text-center"><?php echo $row['nombre']?></h4>
-                        <h4 class="text-danger text-center">RD$ <?php echo $row['precio']?></h4>
-                        <input type="text" name="quantity" class="form-control" value="1" />
-                        <p class='text-center'>
-                        <input type="submit" name="add_to_cart" class="btn btn-success " value="Agregar al carro" /></p>
-                        
-                        <input type="hidden" name="hidden_name" value="nombre" />
-                        <input type="hidden" name="hidden_price" value="precio" />
+    <!----------------Este recorre los datos en la base de la tabla productos--------------->
+        <?php $resultado = mysqli_query($conexion, $productos); $grupoArt = []; while($row = mysqli_fetch_assoc($resultado)) { ?>
+            <div class="filterDiv <?php echo strtolower($row['grupo'])?>">
+                <div class="contenedor_productos">
+                    <div class="tarjeta_producto">
+                        <form method="post" action="">
+                            <div class="thumbnail">
+                                <img src="data: image/png;base64,<?php echo base64_encode($row['imagen']);?>"/>
+                                <div class="caption">
+                                    <h4 class="text-info text-center"><?php echo $row['nombre']?></h4>
+                                    <h4 class="text-danger text-center">RD$ <?php echo $row['precio']?></h4>
+                                    <input type="number" name="quantity" class="form-control" value="1" />
+                                    <p class='text-center'>
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Agregar al carro" /></p>
+                                    
+                                    <input type="hidden" name="hidden_name" value="nombre" />
+                                    <input type="hidden" name="hidden_price" value="precio" />
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        <?php } mysqli_free_result($resultado)?>
     </div>
-
-    <?php  } mysqli_free_result($resultado)?>
-
-</div>
-
-
-<a class="btn-abrir-insertar" id="btn-abrir-popup" >AGREGAR</a>
-
-
-
+<a class="btn-abrir-insertar" id="btn-abrir-popup" ></a>
 <div class="overlay" id="overlay">
 			<div class="popup" id="popup">
 				<a href="#"  class="btn-cerrar-popup"><i class="fas fa-"></i></a>
@@ -96,7 +74,5 @@
 			</div>
 		</div>    
        
-<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
-
-  <script src="popup.js"></script>
+<script src="popup.js"></script>
 </body>

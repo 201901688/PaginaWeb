@@ -6,25 +6,19 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa fa-fw fa-home"></i> Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../PaginaWeb"><i class="fa fa-fw fa-home"></i> Home <span class="sr-only">(current)</span></a>
       </li>
+
+     
       <li class="nav-item">
-          <a href="#" class="nav-link">Comestibles</a> 
+          <a onclick="filterSelection('vegetales')" class="nav-link"> Frutas y Vegetales</a> 
       </li>
-      <li class="nav-item">
-          <a href="#" class="nav-link"> Bebidas</a> 
-      </li>
-      <li class="nav-item">
-          <a href="#" class="nav-link"></i> Frutas y Vegetales</a> 
-      </li>
-      <li class="nav-item">
-          <a href="#" class="nav-link"> Limpieza</a> 
-      </li>
+
       <li class="nav-item">
           <a href="#" class="nav-link"> Ofertas</a> 
       </li>
       <li class="nav-item">
-          <a href="#" class="nav-link"> Recetas</a> 
+          <a href="./vista_administrador.php" class="nav-link"> Administrador</a> 
       </li>
       
     </ul>

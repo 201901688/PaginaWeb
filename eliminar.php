@@ -3,7 +3,7 @@ include("conexion.php");
 $id = $_GET["id"];
 
 
-$eliminar = "DELETE FROM ciudades WHERE codigociu = $id";
+$eliminar = "DELETE FROM productos WHERE id = $id";
 
 
 $resultado = mysqli_query($conexion, $eliminar);
