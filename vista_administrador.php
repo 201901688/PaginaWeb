@@ -64,7 +64,9 @@
                             <input type="number" name="quantity" class="form-control" value="1" />
                             <p class='text-center'>
                             <input type="submit" name="add_to_cart" class="btn btn-success " value="Agregar al carro" /></p>
-                            
+                            <a href="actualizar.php?id=<?php echo $row["id"]; ?>" ><i><img src="./src/imagenes/lapiz.png" style="width: 30px;" /></i></a>
+                            <a href="eliminar.php?id=<?php echo $row["id"]; ?>" class="elimina_registro"><i><img src="./src/imagenes/trash.png" style="width: 30px;" /></i></a>
+
                             <input type="hidden" name="hidden_name" value="nombre" />
                             <input type="hidden" name="hidden_price" value="precio" />
                         </div>
