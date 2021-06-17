@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"> 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,11 +15,9 @@
       </li>
 
       <li class="nav-item">
-          <a href="#" class="nav-link"> Ofertas</a> 
+          <a href="carrusel_ofertas.php" class="nav-link"> Ofertas</a> 
       </li>
-      <li class="nav-item">
-          <a href="./vista_administrador.php" class="nav-link"> Administrador</a> 
-      </li>
+
       
     </ul>
 
@@ -27,8 +25,8 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
-    <a href= "<?php echo SERVERURL; ?>vistas/contenidos/login-view" class="nav-link"><i class="fas fa-user-cog"></i></i> Login</a>
-    <a href="" class="btn-exit-system"> <i class="fas fa-power-off"></i></a>
+    <a href= "" class="nav-link"><i class="fas fa-user-cog"></i></i> Login</a>
+   
   </div>
 </nav>
 

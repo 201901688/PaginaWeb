@@ -13,7 +13,9 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
     <title>FamilyWebMarket</title>
 </head>
@@ -37,18 +39,21 @@
     include "grupo_articulo.php";
   ?>
  
-   
+    <div class="sidenav navbar-dark bg-dark carrito">
+        <div style="display: inline-flex; " class="bg-dark   sticky-top">
+            <img style="width: 50px;" src="./src/imagenes/carrito.png">
+            <h3>Orden</h3>
+        </div>
+        <div class="lista_carrito">
+            <?php
+                include "solicitudes.php";
+            ?>
+            
+        </div>
 
+    </div>
 
-
-
-
-
-    
-
-
- 
-<div class="contenedor_productos">
+<div class="contenedor_producto_principal">
 
 <?php $resultado = mysqli_query($conexion, $productos); $grupoArt = []; while($row = mysqli_fetch_assoc($resultado)) { ?>
 
@@ -65,7 +70,6 @@
                             <p class='text-center'>
                             <input type="submit" name="add_to_cart" class="btn btn-success " value="Agregar al carro" /></p>
                             <a href="actualizar.php?id=<?php echo $row["id"]; ?>" ><i><img src="./src/imagenes/lapiz.png" style="width: 30px;" /></i></a>
-                            <a href="eliminar.php?id=<?php echo $row["id"]; ?>" class="elimina_registro"><i><img src="./src/imagenes/trash.png" style="width: 30px;" /></i></a>
 
                             <input type="hidden" name="hidden_name" value="nombre" />
                             <input type="hidden" name="hidden_price" value="precio" />
